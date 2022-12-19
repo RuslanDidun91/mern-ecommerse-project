@@ -1,0 +1,8 @@
+.detail-image-div{
+  width: 350px;
+  height: 350px;
+}
+
+.main-div{
+  display: flex;
+}

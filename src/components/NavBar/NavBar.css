@@ -1,0 +1,8 @@
+.main-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #0072CE;
+  height: 25px;
+  width: 100%;
+}

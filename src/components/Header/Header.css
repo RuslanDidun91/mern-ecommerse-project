@@ -1,0 +1,31 @@
+.main-nav {
+  /* margin: 20px 20px 20px 20px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  height: 80px;
+  background-color: blue;
+  align-items: center;
+  width: 100%;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+a:hover{
+  color:cadetblue;
+}
+
+.nav-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.user-name{
+  color: white;
+}
+

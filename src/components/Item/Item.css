@@ -1,0 +1,57 @@
+.item-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  margin: 25px;
+  padding: 10px;
+  width: 35vmin;
+  /* height: 60vmin; */
+  /* border: 1px solid grey; */
+}
+
+.crop {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 20px;
+  width: 35vmin;
+  color: black;
+  white-space: pre-line;
+}
+
+.title{
+margin: 0 0 20px 0;
+}
+
+.image-div {
+  height: 10rem;
+  text-align: center;
+}
+
+.item-main:hover {
+  transition: transform .5s;
+  /* Animation */
+}
+
+.item-main:hover:hover {
+  transform: scale(1.15);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.title>div {
+  font-size: 20px;
+}
+
+.price {
+  color: #bb0628;
+}
+
+.titel>h4 {
+  width: 100%;
+}
+
+.rating-total{
+  color: rgb(129, 128, 128);
+}
