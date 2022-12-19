@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const itemSchema = require('./itemSchema');
 
-const lineItemsSchema = new Schema({
+const lineItemSchema = new Schema({
   qty: { type: Number, default: 1 },
   item: itemSchema
 }, {
@@ -10,10 +10,10 @@ const lineItemsSchema = new Schema({
   toJSON: { virtuals: true }
 })
 
-lineItemsSchema.virtual('extPrice').get(() => {
+lineItemSchema.virtual('extPrice').get(function() {
   // 'this' keyword is bound to the lineItem document
   return this.qty * this.item.price;
-})
+});
 
 const orderSchema = new Schema({
   user: {
@@ -21,7 +21,7 @@ const orderSchema = new Schema({
     ref: 'User',
     required: true
   },
-  lineItems: [lineItemsSchema],
+  lineItems: [lineItemSchema],
   isPaid: { type: Boolean, default: false }
 }, {
   timestamps: true,
@@ -58,7 +58,10 @@ orderSchema.methods.addItemToCart = async function (itemId) {
   const cart = this;
   // Check if the item already exists in the cart
 
-  const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
+  const lineItem = cart.lineItems.find(lineItem => lineItem.item.item_id === itemId);
+
+  // console.log(cart.lineItems)
+  // console.log(lineItem)
 
   if (lineItem) {
     // It already exists, so increase the qty
@@ -70,7 +73,8 @@ orderSchema.methods.addItemToCart = async function (itemId) {
 
     // const item = await Item.findById({ itemId });
 
-    const item = await Item.findOne({ item_id: item_Id });
+    const item = await Item.findOne({ item_id: itemId });
+// console.log(item, 'item')
 
     // The qty of the new lineItem object being pushed in defaults to 1
     cart.lineItems.push({ item });
@@ -84,7 +88,7 @@ orderSchema.methods.setItemQty = function (itemId, newQty) {
   // this keyword is bound to the cart (order doc)
   const cart = this;
   // Find the line item in the cart for the menu item
-  const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
+  const lineItem = cart.lineItems.find(lineItem => lineItem.item.item_id ===itemId);
   if (lineItem && newQty <= 0) {
     // Calling remove, removes itself from the cart.lineItems array
     lineItem.remove();

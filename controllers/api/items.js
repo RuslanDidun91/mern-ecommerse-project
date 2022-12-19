@@ -20,7 +20,7 @@ async function getItemsAPI(req, res) {
           main_image: item.product.main_image,
           rating: item.product.rating,
           description: item.product.description,
-          price: item.product.price,
+          price: item.offers.primary.price,
           item_id: item.product.item_id,
           ratings_total: item.product.ratings_total
         })

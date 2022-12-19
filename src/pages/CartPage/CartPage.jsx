@@ -1,10 +1,13 @@
 
 
-export default function CartPage() {
+export default function CartPage({ cart }) {
+
+
+  console.log(cart)
   
   return (
     <div>
-      <h1>your cart is empty</h1>
+      <h1>{ }</h1>
     </div>
   )
 }
