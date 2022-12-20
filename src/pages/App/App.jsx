@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
-import {NavBar} from '../../components/NavBar/NavBar';
+import { NavBar } from '../../components/NavBar/NavBar';
 import Header from '../../components/Header/Header';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
@@ -17,6 +17,11 @@ export default function App() {
   const [data, setData] = useState([]);
   const [cart, setCart] = useState(null);
 
+
+  async function handleChangeQty(itemId, newQty) {
+    const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
+    setCart(updatedCart);
+  }
 
   useEffect(function () {
     async function getCart() {
@@ -38,7 +43,7 @@ export default function App() {
       {user ?
         <>
           <Header user={user} setUser={setUser} setData={setData} />
-          <NavBar setUser={setUser}/>
+          <NavBar setUser={setUser} />
           <Routes>
             {/* Route components in here */}
             <Route path="/orders/new" element={<NewOrderPage data={data}
@@ -46,7 +51,7 @@ export default function App() {
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/items/:itemId" element={<ItemDetailsPage data={data}
               handleAddToOrder={handleAddToOrder} />} />
-            <Route path="/cart" element={<CartPage cart={cart} />} />
+            <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} handleChangeQty={handleChangeQty}/>} />
           </Routes>
         </>
         :
