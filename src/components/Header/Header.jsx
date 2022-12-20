@@ -15,7 +15,7 @@ export default function Header({ user, setData }) {
       <SearchBar setData={setData} />
       <span className='user-name'> <small>Welcome, </small>{user.name}</span>
       <Link><EmailIcon fontSize='large' /></Link>
-      <Cart />
+      <Link to="/cart"><Cart /></Link>
     </div>
   );
 }

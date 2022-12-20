@@ -1,0 +1,41 @@
+.cart-main-div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 10px;
+  /* flex-wrap: wrap; */
+  margin: 25px;
+  padding: 5px;
+  width: 26rem;
+  height: 13rem;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.cart-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 15px;
+  color: black;
+  white-space: pre-line;
+  width: 15rem;
+  padding: 10px 10px;
+}
+
+.image-div {
+  height: 10rem;
+  width: 10rem;
+}
+
+.delete-qty {
+  display: flex;
+  /* width: 100%; */
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+#price-div{
+  font-size: 20px;
+  margin-left: 15px;
+}
