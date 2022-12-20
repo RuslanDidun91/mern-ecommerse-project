@@ -4,28 +4,36 @@
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: nowrap;
-  height: 80px;
+  height: 100px;
   background-color: blue;
   align-items: center;
   width: 100%;
+  margin: 0;
 }
 
-a{
+a {
   color: white;
   text-decoration: none;
 }
 
-a:hover{
-  color:cadetblue;
+a:hover {
+  color: cadetblue;
 }
 
-.nav-div{
+.nav-div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.user-name{
+.user-name {
   color: white;
 }
 
+.logo-div {
+  background-image: url('https://i.imgur.com/JZpQGTP.png');
+  width: 14rem;
+  height: 4vmin;
+  background-size: cover;
+  left: 0;
+}

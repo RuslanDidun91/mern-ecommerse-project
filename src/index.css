@@ -10,6 +10,10 @@
   --text-dark: #615954;
 }
 
+
+body{
+  margin: 0;
+}
 /* *, *:before, *:after {
   box-sizing: border-box;
 } */
