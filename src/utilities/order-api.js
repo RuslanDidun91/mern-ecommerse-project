@@ -15,3 +15,7 @@ export function addItemToCart(itemId) {
 export function setItemQtyInCart(itemId, newQty) {
   return sendRequest(`${BASE_URL}/cart/qty`, 'PUT', { itemId, newQty })
 }
+
+export function checkout() {
+  return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
+}

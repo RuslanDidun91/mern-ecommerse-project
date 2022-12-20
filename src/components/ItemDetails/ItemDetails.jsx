@@ -29,7 +29,7 @@ export const ItemDetails = ({ data, handleAddToOrder }) => {
         <h4>{item.product.title}</h4>
         <ul dangerouslySetInnerHTML={{ __html: item.product.description }}></ul>
         <Rating name="size-large" defaultValue={item.product.rating} precision={0.5} size="large" />
-        <div className='rating-total'>({item.product.ratings_total}reviews)</div>
+        <div className='rating-total'>({item.product.ratings_total} reviews)</div>
       </div>
       <Space wrap>
         <Button type="primary" onClick={() => handleAddToOrder(item.product.item_id)}>Add to cart</Button>

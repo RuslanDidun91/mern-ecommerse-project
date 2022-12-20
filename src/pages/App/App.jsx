@@ -35,7 +35,10 @@ export default function App() {
   const handleAddToOrder = async (item_id) => {
     const updatedCart = await ordersAPI.addItemToCart(item_id);
     setCart(updatedCart);
+    console.log(updatedCart)
   }
+
+  
 
   return (
     <main className="App">
