@@ -1,7 +1,7 @@
 import CartItem from '../../components/CartItem/CartItem';
 
 
-export default function CartPage({ cart, handleChangeQty }) {
+export default function CartPage({ cart, handleChangeQty, handleDeleteItem }) {
 
 
 
@@ -14,11 +14,11 @@ export default function CartPage({ cart, handleChangeQty }) {
         : cart.lineItems && cart.lineItems.map((item) => (
           <CartItem lineItem={item}
                     key={item.id}
-                    handleChangeQty={handleChangeQty} />
+                    handleChangeQty={handleChangeQty}
+                    handleDeleteItem={handleDeleteItem} />
         ))}
         <div>
-          <span>{cart.orderQty}</span><br />
-          <span>Your total is:</span>
+          <span>Your total is: </span>
           <span className='price'><strong>${cart.orderTotal.toFixed(2)}</strong> </span>
           <button>Checkout</button>
         </div>

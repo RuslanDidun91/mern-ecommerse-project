@@ -2,11 +2,9 @@ import './CartItem.css';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from 'antd';
-import { Checkout } from './Checkout';
 
 
-export default function CartItem({ lineItem, handleChangeQty }) {
-
+export default function CartItem({ lineItem, handleChangeQty, handleDeleteItem }) {
 
   return (
     <div className="cart-main-div">
@@ -20,7 +18,10 @@ export default function CartItem({ lineItem, handleChangeQty }) {
         <h4 className="cart-title">{lineItem.item.title}</h4>
         <div id="price-div" className="price"><strong>${lineItem.item.price}</strong></div>
         <span className='delete-qty'>
-          <IconButton aria-label="delete" size="large" id="delete-btn">
+          <IconButton aria-label="delete"
+            size="large"
+            id="delete-btn"
+            onClick={handleDeleteItem}>
             <DeleteIcon fontSize="inherit" />
           </IconButton>
           <span>
@@ -28,7 +29,6 @@ export default function CartItem({ lineItem, handleChangeQty }) {
               <Button
                 type="primary"
                 shape="circle"
-                
                 onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}><strong>-</strong></Button>
             }
             <span className="quantity"><strong>{lineItem.qty}</strong></span>

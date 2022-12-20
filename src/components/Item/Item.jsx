@@ -4,7 +4,6 @@ import Rating from '@mui/material/Rating';
 import { Button, Space } from 'antd';
 
 
-
 export const Item = ({ item, handleAddToOrder }) => {
 
   return (
@@ -27,7 +26,6 @@ export const Item = ({ item, handleAddToOrder }) => {
           </span>
         </div>
       </Link>
-      {/* <button onClick={() => handleAddToOrder(item.product.item_id)}>add to cart</button> */}
       <Space wrap>
         <Button type="primary" onClick={() => handleAddToOrder(item.product.item_id)}>Add to cart</Button>
       </Space>
