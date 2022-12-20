@@ -1,9 +1,14 @@
 import CartItem from '../../components/CartItem/CartItem';
 import './CartPage.css';
-import * as ordersAPI from '../../utilities/order-api'
+import * as ordersAPI from '../../utilities/order-api';
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 export default function CartPage({ cart, handleChangeQty, handleDeleteItem }) {
+
+  const navigate = useNavigate();
 
   async function handleCheckout() {
     await ordersAPI.checkout();
