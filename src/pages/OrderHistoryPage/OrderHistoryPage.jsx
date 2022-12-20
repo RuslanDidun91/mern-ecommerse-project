@@ -1,19 +1,30 @@
 import { useNavigate } from 'react-router-dom';
+import * as ordersAPI from '../../utilities/order-api';
+import { useEffect, useState } from 'react';
+import OrderList from '../../components/OrderList/OrderList'
+import './OrderHistoryPage.css'
 
 
 export default function OrderHistoryPage() {
 
-  const navigate = useNavigate();
+  const [orders, setOrders] = useState([]);
+  const [activeOrder, setActiveOrder] = useState(null);
 
-  
-  const goBackHandleClick = () => {
-    navigate('/orders/new')
-  }
+
+  useEffect(function () {
+    async function getOrders() {
+      const orders = await ordersAPI.getOrderHistory();
+      setActiveOrder(orders[0] || null);
+      setOrders(orders);
+    }
+    getOrders();
+  }, []);
 
   return (
-    <>
-      <h1>OrderHistoryPage</h1>
-      <button onClick={goBackHandleClick}> Home </button>
-    </>
+    <main className='OrderHistoryPage'>
+      <OrderList orders={orders}
+        activeOrder={activeOrder}
+        setActiveOrder={setActiveOrder} />
+    </main>
   );
 }

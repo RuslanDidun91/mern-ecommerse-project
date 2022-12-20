@@ -19,3 +19,8 @@ export function setItemQtyInCart(itemId, newQty) {
 export function checkout() {
   return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
 }
+
+// Fetches all orders for the logged in user
+export function getOrderHistory() {
+  return sendRequest(`${BASE_URL}`);
+}

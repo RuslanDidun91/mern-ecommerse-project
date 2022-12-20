@@ -2,20 +2,32 @@ import CartItem from '../../components/CartItem/CartItem';
 import './CartPage.css';
 import * as ordersAPI from '../../utilities/order-api';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 
 
-export default function CartPage({ cart, handleChangeQty, handleDeleteItem }) {
+export default function CartPage({ cart, handleChangeQty, handleDeleteItem, setCart }) {
 
   const navigate = useNavigate();
 
   async function handleCheckout() {
     await ordersAPI.checkout();
     navigate('/orders');
+    setCart(cart)
+    console.log(cart)
   }
 
   console.log(cart)
+
+
+  useEffect(function () {
+    async function getCart() {
+      const cart = await ordersAPI.getCart();
+      setCart(cart);
+    }
+    getCart();
+  }, []);
 
   return (
     <main className='cart-main'>
