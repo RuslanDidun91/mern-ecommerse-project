@@ -2,6 +2,8 @@ import CartItem from '../../components/CartItem/CartItem';
 
 export default function CartPage({ cart }) {
 
+
+
   console.log(cart)
   return (
     <main>

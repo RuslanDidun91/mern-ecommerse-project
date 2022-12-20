@@ -1,8 +1,14 @@
-.main-div {
+.main-div{
+  width: 100%;
+}
+
+
+.styles-div {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   background-color: #0072CE;
-  height: 25px;
+  height: 30px;
   width: 100%;
 }

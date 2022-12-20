@@ -35,7 +35,15 @@
   margin-right: 30px;
 }
 
-#price-div{
+#price-div {
   font-size: 20px;
   margin-left: 15px;
+}
+
+.quantity {
+  font-size: 20;
+}
+
+#delete-btn {
+  margin-left: -150px;
 }

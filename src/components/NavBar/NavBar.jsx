@@ -12,8 +12,8 @@ export const NavBar = ({ setUser }) => {
   }
 
   return (
-    <div>
-      <div className="main-div">
+    <div className='main-div'>
+      <div className="styles-div">
         <Link to="/orders"><strong>History</strong></Link>
         <Link to="/orders/new"><strong>Home</strong></Link>
         <Link to="" onClick={handleLogOut}><strong>Log Out</strong></Link>
