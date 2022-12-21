@@ -10,7 +10,6 @@ export default function OrderList({ orders, activeOrder, setActiveOrder }) {
     setActiveOrder={setActiveOrder}
   />)
 
-
   return (
     <main className={`OrderList ${orders.length ? '' : 'no-orders'}`}>
       {orderList}

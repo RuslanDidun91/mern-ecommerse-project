@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import * as ordersAPI from '../../utilities/order-api';
+import * as ordersAPI from '../../utilities/orders-api';
 import { useEffect, useState } from 'react';
 import OrderList from '../../components/OrderList/OrderList'
 import './OrderHistoryPage.css'

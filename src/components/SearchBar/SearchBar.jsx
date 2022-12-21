@@ -6,13 +6,11 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
 
-
 export default function SearchBar({ setData }) {
 
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate();
-
 
   async function fetchDataHandler() {
     setIsLoading(true);
@@ -22,7 +20,7 @@ export default function SearchBar({ setData }) {
     }
     setData(searchResult.search_results)
     setIsLoading(false)
-    // console.log(searchResult.search_results);
+    console.log(searchResult.search_results);
   }
 
   const handleSubmit = (event) => {
@@ -48,7 +46,6 @@ export default function SearchBar({ setData }) {
           disabled={isLoading}></button>
       </form>
           }
-
     </div>
   );
 }

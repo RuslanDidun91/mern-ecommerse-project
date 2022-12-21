@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import { NavBar } from '../../components/NavBar/NavBar';
 import Header from '../../components/Header/Header';
@@ -9,7 +9,7 @@ import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import ItemDetailsPage from '../../pages/ItemDetailsPage/ItemDetailsPage';
 import CartPage from '../CartPage/CartPage';
-import * as ordersAPI from '../../utilities/order-api';
+import * as ordersAPI from '../../utilities/orders-api';
 
 
 export default function App() {
@@ -24,6 +24,7 @@ export default function App() {
   }
 
   useEffect(function () {
+    console.log(cart)
     async function getCart() {
       const cart = await ordersAPI.getCart();
       setCart(cart);
@@ -35,7 +36,7 @@ export default function App() {
   const handleAddToOrder = async (item_id) => {
     const updatedCart = await ordersAPI.addItemToCart(item_id);
     setCart(updatedCart);
-    // console.log(updatedCart)
+    console.log(updatedCart)
   }
 
 
@@ -43,15 +44,16 @@ export default function App() {
     <main className="App">
       {user ?
         <>
-            <Header user={user} setUser={setUser} setData={setData} cart={cart} />
-            <NavBar setUser={setUser} />
+          <Header user={user} setUser={setUser} setData={setData} cart={cart} />
+          <NavBar setUser={setUser} />
           <Routes>
             {/* Route components in here */}
             <Route path="/orders/new" element={<NewOrderPage data={data}
-              handleAddToOrder={handleAddToOrder} />} />
+              handleAddToOrder={handleAddToOrder} setData={setData}/>} />
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/items/:itemId" element={<ItemDetailsPage data={data}
               handleAddToOrder={handleAddToOrder} />} />
+            <Route path="/*" element={<Navigate to="/orders/new" />} />
             <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} handleChangeQty={handleChangeQty} />} />
           </Routes>
         </>

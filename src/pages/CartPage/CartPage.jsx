@@ -1,6 +1,6 @@
 import CartItem from '../../components/CartItem/CartItem';
 import './CartPage.css';
-import * as ordersAPI from '../../utilities/order-api';
+import * as ordersAPI from '../../utilities/orders-api';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import Button from '@mui/material/Button';
@@ -15,7 +15,7 @@ export default function CartPage({ cart, handleChangeQty, setCart }) {
     await ordersAPI.checkout();
     navigate('/orders');
     setCart(cart)
-    console.log(cart)
+    // console.log(cart)
   }
 
   useEffect(function () {

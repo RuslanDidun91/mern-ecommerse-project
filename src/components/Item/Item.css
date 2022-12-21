@@ -4,7 +4,7 @@
   justify-content: center;
   flex-wrap: wrap;
   border-radius: 5px;
-  margin: 25px;
+  margin: -10px 25px 25px 25px;
   padding: 10px;
   width: 25vmin;
   /* height: 60vmin; */
@@ -16,7 +16,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   line-height: 20px;
-  width: 25vmin;
+  /* width: 30vmin; */
   color: black;
   white-space: pre-line;
 }

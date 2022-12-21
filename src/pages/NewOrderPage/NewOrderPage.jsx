@@ -1,11 +1,14 @@
 import { ItemsList } from '../../components/ItemsList/ItemsList';
 
 
-export default function NewOrderPage({ data, handleAddToOrder }) {
+export default function NewOrderPage({ data, handleAddToOrder, setData }) {
   
   return (
     <main>
-      <ItemsList data={data} handleAddToOrder={handleAddToOrder}/>
+      {data && 
+        <ItemsList data={data} 
+        handleAddToOrder={handleAddToOrder} 
+        setData={setData}/>}
     </main>
   );
 }
