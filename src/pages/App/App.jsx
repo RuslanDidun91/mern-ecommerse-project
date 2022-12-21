@@ -38,13 +38,13 @@ export default function App() {
     // console.log(updatedCart)
   }
 
-  
+
   return (
     <main className="App">
       {user ?
         <>
-          <Header user={user} setUser={setUser} setData={setData} cart={cart}/>
-          <NavBar setUser={setUser} />
+            <Header user={user} setUser={setUser} setData={setData} cart={cart} />
+            <NavBar setUser={setUser} />
           <Routes>
             {/* Route components in here */}
             <Route path="/orders/new" element={<NewOrderPage data={data}
@@ -52,7 +52,7 @@ export default function App() {
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/items/:itemId" element={<ItemDetailsPage data={data}
               handleAddToOrder={handleAddToOrder} />} />
-            <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} handleChangeQty={handleChangeQty}/>} />
+            <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} handleChangeQty={handleChangeQty} />} />
           </Routes>
         </>
         :

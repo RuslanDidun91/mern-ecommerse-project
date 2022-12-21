@@ -2,8 +2,6 @@ import './NavBar.css'
 import { Link } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
 
-
-
 export const NavBar = ({ setUser }) => {
 
   function handleLogOut() {
