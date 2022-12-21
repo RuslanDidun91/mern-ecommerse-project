@@ -10,7 +10,7 @@ export default function AuthPage({ setUser }) {
   return (
     <main className='auth-main'>
     <div className='bg-image'>
-      <h1>Join today</h1>
+      <h1>Join Wastemart today</h1>
       <Button variant="contained" onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Log In' : 'Sign Up'}</Button>
       {showSignUp ?
         <SignUpForm setUser={setUser} />
