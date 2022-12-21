@@ -24,7 +24,7 @@ export default function App() {
   }
 
   useEffect(function () {
-    console.log(cart)
+    // console.log(cart)
     async function getCart() {
       const cart = await ordersAPI.getCart();
       setCart(cart);

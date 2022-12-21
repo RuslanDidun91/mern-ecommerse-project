@@ -18,8 +18,10 @@ export default function FilterItems({ data, setData }) {
         return a.offers.primary.price - b.offers.primary.price;
       } else if (filter === 'highPrice') {
         return b.offers.primary.price - a.offers.primary.price;
-      } else if (filter === 'rating') {
+      } else if (filter === 'lowRating') {
         return a.product.rating - b.product.rating
+      } else if (filter === 'highRating') {
+        return b.product.rating - a.product.rating
       } else return a[filter].localeCompare(b[filter])
     })
     setData(sorted)
@@ -38,8 +40,8 @@ export default function FilterItems({ data, setData }) {
         <MenuItem value=""></MenuItem>
         <MenuItem value={'lowPrice'} onChange={(e) => setFilter(e.target.value)}>lowPrice</MenuItem>
         <MenuItem value={'highPrice'} onChange={(e) => setFilter(e.target.value)}>highPrice</MenuItem>
-        <MenuItem value={'highRating'} onChange={(e) => setFilter(e.target.value)}>highRating</MenuItem>
         <MenuItem value={'lowRating'} onChange={(e) => setFilter(e.target.value)}>lowRating</MenuItem>
+        <MenuItem value={'highRating'} onChange={(e) => setFilter(e.target.value)}>highRating</MenuItem>
       </Select>
     </FormControl>
   );
