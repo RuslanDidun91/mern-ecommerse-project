@@ -6,7 +6,7 @@
   border-radius: 5px;
   margin: 25px;
   padding: 10px;
-  width: 35vmin;
+  width: 25vmin;
   /* height: 60vmin; */
   /* border: 1px solid grey; */
 }
@@ -16,7 +16,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   line-height: 20px;
-  width: 35vmin;
+  width: 25vmin;
   color: black;
   white-space: pre-line;
 }
@@ -27,6 +27,7 @@ margin: 0 0 20px 0;
 
 .image-div {
   height: 10rem;
+  width: 10rem;
   text-align: center;
 }
 

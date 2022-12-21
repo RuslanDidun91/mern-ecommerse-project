@@ -10,6 +10,8 @@ import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import ItemDetailsPage from '../../pages/ItemDetailsPage/ItemDetailsPage';
 import CartPage from '../CartPage/CartPage';
 import * as ordersAPI from '../../utilities/order-api';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 
 export default function App() {

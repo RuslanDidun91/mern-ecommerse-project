@@ -18,8 +18,6 @@ export default function CartItem({ lineItem, handleChangeQty, handleDeleteItem }
         <h4 className="cart-title">{lineItem.item.title}</h4>
         <div id="price-div" className="price"><strong>${lineItem.item.price}</strong></div>
         <span className='delete-qty'>
-
-
           {/* delete button */}
           <IconButton aria-label="delete"
             size="large"
@@ -27,8 +25,6 @@ export default function CartItem({ lineItem, handleChangeQty, handleDeleteItem }
             onClick={() => handleDeleteItem(lineItem._id)}>
             <DeleteIcon fontSize="inherit" />
           </IconButton>
-
-          
           <span>
             {!lineItem.item.isPaid &&
               <Button

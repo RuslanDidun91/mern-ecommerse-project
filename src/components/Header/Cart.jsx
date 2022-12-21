@@ -13,6 +13,8 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
+const getTotalItems = () => null
+
 export default function Cart() {
   return (
     <IconButton aria-label="cart">
