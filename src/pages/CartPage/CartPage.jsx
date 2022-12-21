@@ -40,7 +40,7 @@ export default function CartPage({ cart, handleChangeQty, setCart }) {
             key={item.id}
             handleChangeQty={handleChangeQty}
             handleDeleteItem={handleDeleteItem} />
-            
+
         ))}
       <div className='checkout-div'>
         {cart.lineItems.length ?
