@@ -25,7 +25,6 @@ async function getItemsAPI(req, res) {
           ratings_total: item.product.ratings_total
         })
       }
-      // console.log(item);
     }
     res.json(items)
   } catch (err) {
