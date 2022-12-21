@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 10px;
-  /* flex-wrap: wrap; */
   margin: 25px;
   padding: 5px;
   width: 26rem;
@@ -29,10 +28,9 @@
 
 .delete-qty {
   display: flex;
-  /* width: 100%; */
   flex-direction: row;
   justify-content: space-between;
-  margin-right: 30px;
+  margin: 20px 30px 0 0;
 }
 
 #price-div {

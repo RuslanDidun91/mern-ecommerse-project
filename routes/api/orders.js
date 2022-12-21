@@ -12,5 +12,7 @@ router.post('/cart/items/:id', ordersCtrl.addToCart);
 router.put('/cart/qty', ordersCtrl.setItemQtyInCart);
 // POST /api/orders/cart/checkout
 router.post('/cart/checkout', ordersCtrl.checkout);
+// DELETE /api/orders/cart/delete
+router.delete('/delete/:id', ordersCtrl.deleteFromCart);
 
 module.exports = router;

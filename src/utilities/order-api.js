@@ -24,3 +24,8 @@ export function checkout() {
 export function getOrderHistory() {
   return sendRequest(`${BASE_URL}`);
 }
+
+export function deleteItemFromCart(itemId) {
+  console.log(itemId)
+  return sendRequest(`${BASE_URL}/delete/${itemId}`, 'DELETE')
+}

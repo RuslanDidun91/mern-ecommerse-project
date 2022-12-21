@@ -6,11 +6,26 @@ module.exports = {
   addToCart,
   setItemQtyInCart,
   checkout,
-  getOrderHistory
+  getOrderHistory,
+  deleteFromCart
+}
+
+async function deleteFromCart(req, res) {
+  try {
+    req.body.user = req.user._id;
+    const cart = await Order.getCart(req.user._id);
+    const itemIndex = cart.lineItems.findIndex(item => item._id == req.body.itemId);
+    cart.lineItems.splice(itemIndex, 1);
+    cart.save();
+    res.json(cart);
+  } catch (err) {
+    console.log(err)
+    res.status(400).json(err)
+  }
 }
 
 async function getOrderHistory(req, res) {
-  const orders = await Order.find({user: req.user._id, isPaid: true}).sort('-updatedAt');
+  const orders = await Order.find({ user: req.user._id, isPaid: true }).sort('-updatedAt');
   res.json(orders);
 }
 
@@ -24,7 +39,7 @@ async function cart(req, res) {
 }
 
 async function addToCart(req, res) {
-  console.log(req.params.id)
+  // console.log(req.params.id)
   try {
     const cart = await Order.getCart(req.user._id);
     await cart.addItemToCart(req.params.id);

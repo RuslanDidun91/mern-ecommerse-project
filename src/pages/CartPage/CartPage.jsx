@@ -3,11 +3,11 @@ import './CartPage.css';
 import * as ordersAPI from '../../utilities/order-api';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import Button from '@mui/material/Button';
 
 
 
-
-export default function CartPage({ cart, handleChangeQty, handleDeleteItem, setCart }) {
+export default function CartPage({ cart, handleChangeQty, setCart }) {
 
   const navigate = useNavigate();
 
@@ -18,9 +18,6 @@ export default function CartPage({ cart, handleChangeQty, handleDeleteItem, setC
     console.log(cart)
   }
 
-  console.log(cart)
-
-
   useEffect(function () {
     async function getCart() {
       const cart = await ordersAPI.getCart();
@@ -28,6 +25,12 @@ export default function CartPage({ cart, handleChangeQty, handleDeleteItem, setC
     }
     getCart();
   }, []);
+
+  const handleDeleteItem = async (item_id) => {
+    const updatedCart = await ordersAPI.deleteItemFromCart(item_id);
+    setCart(updatedCart);
+    console.log(updatedCart)
+  }
 
   return (
     <main className='cart-main'>
@@ -38,24 +41,20 @@ export default function CartPage({ cart, handleChangeQty, handleDeleteItem, setC
             key={item.id}
             handleChangeQty={handleChangeQty}
             handleDeleteItem={handleDeleteItem} />
+            
         ))}
       <div className='checkout-div'>
-        {/* <span>Your total is: </span>
-          <span className='price'><strong>${cart.orderTotal.toFixed(2)}</strong> </span>
-          <button>Checkout</button> */}
-
         {cart.lineItems.length ?
           <>
             <section className="total">
               {cart.isPaid ?
                 <span className="right">TOTAL&nbsp;&nbsp;</span>
                 :
-                <button
-                  className="btn-sm"
+                <Button
+                  variant="contained"
+                  size='small'
                   onClick={handleCheckout}
-                  disabled={!cart.lineItems.length}
-                >CHECKOUT</button>
-              }
+                  disabled={!cart.lineItems.length}>Checkout</Button>}
               <span>{cart.totalQty}</span>
               <span className='price'>${cart.orderTotal.toFixed(2)}</span>
             </section>
