@@ -10,8 +10,6 @@ import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import ItemDetailsPage from '../../pages/ItemDetailsPage/ItemDetailsPage';
 import CartPage from '../CartPage/CartPage';
 import * as ordersAPI from '../../utilities/order-api';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
 
 
 export default function App() {
@@ -37,7 +35,7 @@ export default function App() {
   const handleAddToOrder = async (item_id) => {
     const updatedCart = await ordersAPI.addItemToCart(item_id);
     setCart(updatedCart);
-    console.log(updatedCart)
+    // console.log(updatedCart)
   }
 
   
@@ -45,7 +43,7 @@ export default function App() {
     <main className="App">
       {user ?
         <>
-          <Header user={user} setUser={setUser} setData={setData} />
+          <Header user={user} setUser={setUser} setData={setData} cart={cart}/>
           <NavBar setUser={setUser} />
           <Routes>
             {/* Route components in here */}

@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 import Cart from './Cart';
 import './Header.css';
 
-export default function Header({ user, setData }) {
+export default function Header({ user, setData, cart }) {
 
   return (
     <div className='main-nav'>
@@ -14,7 +14,7 @@ export default function Header({ user, setData }) {
       <SearchBar setData={setData} />
       <span className='user-name'> <small>Welcome, </small>{user.name}</span>
       <Link><EmailIcon fontSize='large' /></Link>
-      <Link to="/cart"><Cart /></Link>
+      <Link to="/cart"><Cart cart={cart}/></Link>
     </div>
   );
 }

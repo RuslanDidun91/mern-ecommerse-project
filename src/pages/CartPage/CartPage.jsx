@@ -29,7 +29,6 @@ export default function CartPage({ cart, handleChangeQty, setCart }) {
   const handleDeleteItem = async (item_id) => {
     const updatedCart = await ordersAPI.deleteItemFromCart(item_id);
     setCart(updatedCart);
-    console.log(updatedCart)
   }
 
   return (
