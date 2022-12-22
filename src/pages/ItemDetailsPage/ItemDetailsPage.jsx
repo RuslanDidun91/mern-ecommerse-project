@@ -1,4 +1,4 @@
-import { ItemDetails } from "../../components/ItemDetails/ItemDetails"
+import { ItemDetails } from "../../components/ItemDetails/ItemDetails";
 
 export default function ItemDetailPage({ data, handleAddToOrder }) {
   return (

@@ -3,7 +3,6 @@ import './Item.css';
 import Rating from '@mui/material/Rating';
 import { Button, Space } from 'antd';
 
-
 export const Item = ({ item, handleAddToOrder }) => {
 
   return (

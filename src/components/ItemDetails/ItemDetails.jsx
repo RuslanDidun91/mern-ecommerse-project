@@ -37,7 +37,6 @@ export const ItemDetails = ({ data, handleAddToOrder }) => {
         <Rating name="size-large" defaultValue={item.product.rating} precision={0.5} size="large" readOnly />
         <div className='rating-total'>({item.product.ratings_total} reviews)</div>
       </span>
-
     </div>
   )
 }

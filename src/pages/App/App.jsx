@@ -11,12 +11,10 @@ import ItemDetailsPage from '../../pages/ItemDetailsPage/ItemDetailsPage';
 import CartPage from '../CartPage/CartPage';
 import * as ordersAPI from '../../utilities/orders-api';
 
-
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [data, setData] = useState([]);
   const [cart, setCart] = useState(null);
-
 
   async function handleChangeQty(itemId, newQty) {
     const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
@@ -24,7 +22,6 @@ export default function App() {
   }
 
   useEffect(function () {
-    // console.log(cart)
     async function getCart() {
       const cart = await ordersAPI.getCart();
       setCart(cart);
@@ -36,9 +33,8 @@ export default function App() {
   const handleAddToOrder = async (item_id) => {
     const updatedCart = await ordersAPI.addItemToCart(item_id);
     setCart(updatedCart);
-    console.log(updatedCart)
+    console.log(updatedCart);
   }
-
 
   return (
     <main className="App">
@@ -49,7 +45,7 @@ export default function App() {
           <Routes>
             {/* Route components in here */}
             <Route path="/orders/new" element={<NewOrderPage data={data}
-              handleAddToOrder={handleAddToOrder} setData={setData}/>} />
+              handleAddToOrder={handleAddToOrder} setData={setData} />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/items/:itemId" element={<ItemDetailsPage data={data}
               handleAddToOrder={handleAddToOrder} />} />

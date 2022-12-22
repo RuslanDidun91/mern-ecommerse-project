@@ -5,8 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import Button from '@mui/material/Button';
 
-
-
 export default function CartPage({ cart, handleChangeQty, setCart }) {
 
   const navigate = useNavigate();
@@ -14,8 +12,7 @@ export default function CartPage({ cart, handleChangeQty, setCart }) {
   async function handleCheckout() {
     await ordersAPI.checkout();
     navigate('/orders');
-    setCart(cart)
-    // console.log(cart)
+    setCart(cart);
   }
 
   useEffect(function () {
@@ -24,7 +21,7 @@ export default function CartPage({ cart, handleChangeQty, setCart }) {
       setCart(cart);
     }
     getCart();
-    console.log(cart)
+    console.log(cart);
   }, []);
 
   const handleDeleteItem = async (item_id) => {
@@ -41,7 +38,6 @@ export default function CartPage({ cart, handleChangeQty, setCart }) {
             key={item.id}
             handleChangeQty={handleChangeQty}
             handleDeleteItem={handleDeleteItem} />
-
         ))}
       <div className='checkout-div'>
         {cart.lineItems.length ?
@@ -49,6 +45,7 @@ export default function CartPage({ cart, handleChangeQty, setCart }) {
             <div className="total">
               <div className='cart-total-items'>You have <strong>{cart.orderQty}</strong> items</div>
               <span className='price'>${cart.orderTotal.toFixed(2)}</span>
+
               <Button
                 id='checkout-btn'
                 variant="contained"
@@ -62,5 +59,5 @@ export default function CartPage({ cart, handleChangeQty, setCart }) {
         }
       </div>
     </main>
-  )
+  );
 }

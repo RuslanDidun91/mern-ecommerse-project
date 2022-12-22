@@ -22,11 +22,8 @@ export default function FilterItems({ data, setData }) {
         return b.product.rating - a.product.rating
       } else return [...data]
     })
-    console.log(sorted)
-
     setData(sorted)
-  }, [filter])
-
+  }, [filter]);
 
   return (
     <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
@@ -38,9 +35,12 @@ export default function FilterItems({ data, setData }) {
         label="types"
         onChange={handleChange}>
         <MenuItem value=""></MenuItem>
-        <MenuItem value={'lowPrice'} onChange={(e) => setFilter(e.target.value)}>Price: Low to High</MenuItem>
-        <MenuItem value={'highPrice'} onChange={(e) => setFilter(e.target.value)}>Price: High to Low</MenuItem>
-        <MenuItem value={'topRated'} onChange={(e) => setFilter(e.target.value)}>Top Rated</MenuItem>
+        <MenuItem value={'lowPrice'}
+          onChange={(e) => setFilter(e.target.value)}>Price: Low to High</MenuItem>
+        <MenuItem value={'highPrice'}
+          onChange={(e) => setFilter(e.target.value)}>Price: High to Low</MenuItem>
+        <MenuItem value={'topRated'}
+          onChange={(e) => setFilter(e.target.value)}>Top Rated</MenuItem>
       </Select>
     </FormControl>
   );

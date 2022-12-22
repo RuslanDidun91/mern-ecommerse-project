@@ -3,8 +3,6 @@ import { Item } from '../../components/Item/Item';
 import Grid from '@mui/material/Grid';
 import FilterItems from './FilterItems';
 
-
-
 export const ItemsList = ({ data, handleAddToOrder, setData }) => {
   return (
     <>
@@ -22,5 +20,5 @@ export const ItemsList = ({ data, handleAddToOrder, setData }) => {
           ))}
       </Grid>
     </>
-  )
+  );
 }

@@ -1,12 +1,6 @@
 .itemlist-div {
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr); */
-  /* margin: 0 30px 0 0; */
-  /* gap: 20px; */
   padding: 10px;
-  text-align: center;
-  /* justify-content: space-around; */
-  
+  text-align: center;  
 }
 
 
