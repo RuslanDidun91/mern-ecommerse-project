@@ -1,7 +1,13 @@
 <div align = "center">
- 
+</br>
+</br>
+      
  <a>[<img src="https://i.imgur.com/JZpQGTP.png" alt="Logo" width="500" height="100">](https://mern-ecommerse-project.herokuapp.com/)
  </a>
+ 
+</br>
+</br>
+      
   
 ##### All money will be wasted, © 2022 Wa$temarT
 </br>

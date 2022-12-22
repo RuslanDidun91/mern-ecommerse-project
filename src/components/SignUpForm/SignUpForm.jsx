@@ -58,6 +58,7 @@ export default class SignUpForm extends Component {
                       value={this.state.name}
                       onChange={this.handleChange}
                       name="name"
+                      type="search"
                       label="Your name"
                       id="outlined-search" />
                   </Grid>
@@ -67,6 +68,7 @@ export default class SignUpForm extends Component {
                       onChange={this.handleChange}
                       value={this.state.email}
                       id="outlined-search"
+                      type="search"
                       name="email"
                       label="Email" />
                   </Grid>
