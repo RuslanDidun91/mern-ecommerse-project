@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import Badge from '@mui/material/Badge';
 import EmailIcon from '@mui/icons-material/Email';
-import { styled } from '@mui/material/styles';
 import Cart from './Cart';
 import './Header.css';
 

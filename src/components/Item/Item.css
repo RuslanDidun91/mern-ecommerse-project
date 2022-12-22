@@ -7,8 +7,6 @@
   margin: -10px 25px 25px 25px;
   padding: 10px;
   width: 25vmin;
-  /* height: 60vmin; */
-  /* border: 1px solid grey; */
 }
 
 .crop {
@@ -16,7 +14,6 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   line-height: 20px;
-  /* width: 30vmin; */
   color: black;
   white-space: pre-line;
 }
@@ -33,7 +30,6 @@ margin: 0 0 20px 0;
 
 .item-main:hover {
   transition: transform .5s;
-  /* Animation */
 }
 
 .item-main:hover:hover {

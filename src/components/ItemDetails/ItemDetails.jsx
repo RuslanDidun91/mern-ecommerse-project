@@ -24,18 +24,18 @@ export const ItemDetails = ({ data, handleAddToOrder }) => {
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat"
         }}> </div>
-      <div className="title">
+      <div className="detail-title">
         <h4>{item.product.title}</h4>
         <ul dangerouslySetInnerHTML={{ __html: item.product.description }}></ul>
         <div className="price">${item.offers.primary.price}</div>
         <Space wrap id="detail-btn">
-        <Button type="primary" onClick={() => handleAddToOrder(item.product.item_id)}>Add to cart</Button>
-        <Button type="primary" onClick={goBackHandle}>go back</Button>
-      </Space>
+          <Button type="primary" onClick={() => handleAddToOrder(item.product.item_id)}>Add to cart</Button>
+          <Button type="primary" onClick={goBackHandle}>go back </Button>
+        </Space>
       </div>
       <span>
-      <Rating name="size-large" defaultValue={item.product.rating} precision={0.5} size="large" readOnly/>
-      <div className='rating-total'>({item.product.ratings_total} reviews)</div>
+        <Rating name="size-large" defaultValue={item.product.rating} precision={0.5} size="large" readOnly />
+        <div className='rating-total'>({item.product.ratings_total} reviews)</div>
       </span>
 
     </div>

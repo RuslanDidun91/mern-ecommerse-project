@@ -6,4 +6,18 @@
 .details-main-div {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin: 20px 0 0 0;
+}
+
+#detail-btn{
+  margin: 50px 0 0 0;
+}
+
+.detail-title{
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, 
+  rgba(0, 0, 0, 0.22) 0px 5px 5px;
 }
