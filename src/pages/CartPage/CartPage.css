@@ -1,0 +1,26 @@
+.cart-main {}
+
+.checkout-div {
+  width: 30rem;
+  height: 100px;
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  max-width: 10rem;
+  position: fixed;
+  margin: 5rem 5rem 0 0;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, 
+  rgba(0, 0, 0, 0.22) 0px 5px 5px;
+}
+
+.cart-total-items {
+  font-size: 16px;
+  padding: 5px;
+}
+
+#checkout-btn{
+  margin: 10px 0 0 0;
+}

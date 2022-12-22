@@ -24,6 +24,7 @@ export default function CartPage({ cart, handleChangeQty, setCart }) {
       setCart(cart);
     }
     getCart();
+    console.log(cart)
   }, []);
 
   const handleDeleteItem = async (item_id) => {
@@ -45,18 +46,16 @@ export default function CartPage({ cart, handleChangeQty, setCart }) {
       <div className='checkout-div'>
         {cart.lineItems.length ?
           <>
-            <section className="total">
-              {cart.isPaid ?
-                <span className="right">TOTAL&nbsp;&nbsp;</span>
-                :
-                <Button
-                  variant="contained"
-                  size='small'
-                  onClick={handleCheckout}
-                  disabled={!cart.lineItems.length}>Checkout</Button>}
-              <span>{cart.totalQty}</span>
+            <div className="total">
+              <div className='cart-total-items'>You have <strong>{cart.orderQty}</strong> items</div>
               <span className='price'>${cart.orderTotal.toFixed(2)}</span>
-            </section>
+              <Button
+                id='checkout-btn'
+                variant="contained"
+                size='small'
+                onClick={handleCheckout}
+                disabled={!cart.lineItems.length}>Checkout</Button>
+            </div>
           </>
           :
           <div className="empty-cart">Your cart is empty</div>
