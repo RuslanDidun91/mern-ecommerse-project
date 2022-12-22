@@ -23,9 +23,10 @@
 
 
 ## About
-#### WastemarT  about.
- 
-#### Wastemart about.
+
+#### In a time of increasing automation, it’s WastemarT mission to keep human connection at the heart of commerce. That’s why we built a place where creativity lives and thrives because it’s powered by people. Wastemart is like a huge virtual shopping mall where you can find almost everithing you need. From the specific to the unexpected (or custom-made), our search tools help buyers explore all the special one-of-a-kind items offered by WastemarT sellers. Here you will have the most secure shopping and checkout, cause nobody will steal your card information if checkout is not real.
+
+#### WastemarT is like a small copy of legendary Walmart only much better... I am using walmart bluecartapi.com as a 3rd party API. The main idea was, to get some expirience in making fetch request and using 3rd party API
 
 ## Getting Started
 Join Wastemart today via [link 👈](https://mern-ecommerse-project.herokuapp.com/) 
@@ -50,15 +51,14 @@ to find any items that you need!
 ## Upcoming Features
 
 - [x] Created and set up project, installed all packages and libraries.
-- [x] Implemented login/register functionality,  added autorization.
-- [x] Added create job, become contractors, profile page, geolocation.
-- [x] Implemented CRUD functionality and become user centric features.
-- [x] Added rating/review feature for contractors, main logo and pictures.
-- [x] Connected materialize_Css library, added css styles, HTML markup.
-- [ ] Integrate Google Sign-In into web app. Add Hamburger menu.
-- [ ] Implement jobs filter by region/proximity.
-- [ ] Add "to favourite" button for contractors.
-- [ ] Integrate @media queries for mobile devices.
+- [x] Implemented login/register functionality, Used Token Based Auth.
+- [x] Added models, search bar, routes, controllers, pages and components. 
+- [x] Consumed 3rd party api, retrieved and displayed data in components.
+- [x] Implemented user's cart, ability to add iteems, badges, item details.
+- [x] Connected Material_UI, Ant design libraries, added css styles, spinner.
+- [ ] Make app more user frienndly. Add feedbacks, reviews section, Stripe.
+- [ ] implement "Add item to my favourite" and "My account" functionality. 
+- [ ] Implement @media queries for mobile devices and other screens.
 
 
 
