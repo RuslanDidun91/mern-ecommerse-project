@@ -37,15 +37,16 @@ to find any items that you need!
 
 ## Instructions
 <details open>
-  <summary>How to use Yard Barker app</summary>
+  <summary>How to join WastemarT app</summary>
     <div>* Register user to be able to check all app's features.</div>
     <div>* Now, you are able to search all items you need.</div>
     <div>* Users are able to add items to cart, delete them.  </div>
     <div>* Users also can make a purchase and check orders history.</div>
 </details>
 
-<img src="https://i.imgur.com/WzjbO0a.png" alt="Logo" width="500" height="500">
 <img src="https://i.imgur.com/vsdvXSw.png" alt="Logo" width="500" height="500">
+</br>
+<img src="https://i.imgur.com/xstVciX.png" alt="Logo" width="500" height="500">
 
 
 ## Upcoming Features

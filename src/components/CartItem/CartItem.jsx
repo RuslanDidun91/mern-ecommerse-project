@@ -18,7 +18,6 @@ export default function CartItem({ lineItem, handleChangeQty, handleDeleteItem }
         <h4 className="cart-title">{lineItem.item.title}</h4>
         <div id="price-div" className="price"><strong>${lineItem.item.price}</strong></div>
         <span className='delete-qty'>
-          {/* delete button */}
           <IconButton aria-label="delete"
             size="large"
             id="delete-btn"

@@ -18,8 +18,8 @@ async function deleteFromCart(req, res) {
     cart.save();
     res.json(cart);
   } catch (err) {
-    console.log(err)
-    res.status(400).json(err)
+    console.log(err);
+    res.status(400).json(err);
   }
 }
 
@@ -31,7 +31,7 @@ async function getOrderHistory(req, res) {
 async function cart(req, res) {
   try {
     const cart = await Order.getCart(req.user._id);
-    res.json(cart)
+    res.json(cart);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -45,7 +45,7 @@ async function addToCart(req, res) {
     // console.log(cart)
     res.json(cart);
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(400).json(err);
   }
 }
