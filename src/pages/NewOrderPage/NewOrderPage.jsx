@@ -8,7 +8,8 @@ export default function NewOrderPage({ data, handleAddToOrder, setData }) {
       {data && 
         <ItemsList data={data} 
         handleAddToOrder={handleAddToOrder} 
-        setData={setData}/>}
+        setData={setData}/>
+        }
     </main>
   );
 }

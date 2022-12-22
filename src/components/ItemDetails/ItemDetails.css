@@ -1,8 +1,9 @@
-.detail-image-div{
+.detail-image-div {
   width: 350px;
   height: 350px;
 }
 
-.main-div{
-  display: flex;
+.details-main-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

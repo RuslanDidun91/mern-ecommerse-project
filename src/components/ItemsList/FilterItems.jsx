@@ -18,12 +18,12 @@ export default function FilterItems({ data, setData }) {
         return a.offers.primary.price - b.offers.primary.price;
       } else if (filter === 'highPrice') {
         return b.offers.primary.price - a.offers.primary.price;
-      } else if (filter === 'lowRating') {
-        return a.product.rating - b.product.rating
-      } else if (filter === 'highRating') {
+      } else if (filter === 'topRated') {
         return b.product.rating - a.product.rating
-      } else return a[filter].localeCompare(b[filter])
+      } else return [...data]
     })
+    console.log(sorted)
+
     setData(sorted)
   }, [filter])
 
@@ -38,10 +38,9 @@ export default function FilterItems({ data, setData }) {
         label="types"
         onChange={handleChange}>
         <MenuItem value=""></MenuItem>
-        <MenuItem value={'lowPrice'} onChange={(e) => setFilter(e.target.value)}>lowPrice</MenuItem>
-        <MenuItem value={'highPrice'} onChange={(e) => setFilter(e.target.value)}>highPrice</MenuItem>
-        <MenuItem value={'lowRating'} onChange={(e) => setFilter(e.target.value)}>lowRating</MenuItem>
-        <MenuItem value={'highRating'} onChange={(e) => setFilter(e.target.value)}>highRating</MenuItem>
+        <MenuItem value={'lowPrice'} onChange={(e) => setFilter(e.target.value)}>Price: Low to High</MenuItem>
+        <MenuItem value={'highPrice'} onChange={(e) => setFilter(e.target.value)}>Price: High to Low</MenuItem>
+        <MenuItem value={'topRated'} onChange={(e) => setFilter(e.target.value)}>Top Rated</MenuItem>
       </Select>
     </FormControl>
   );

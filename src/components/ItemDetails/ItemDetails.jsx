@@ -16,7 +16,7 @@ export const ItemDetails = ({ data, handleAddToOrder }) => {
   let item = data.find((item) => item.product.item_id === itemId)
 
   return (
-    <div className="main-div">
+    <div className="details-main-div">
       <div
         className="detail-image-div"
         style={{
@@ -25,16 +25,19 @@ export const ItemDetails = ({ data, handleAddToOrder }) => {
           backgroundRepeat: "no-repeat"
         }}> </div>
       <div className="title">
-        <div>${item.offers.primary.price}</div>
         <h4>{item.product.title}</h4>
         <ul dangerouslySetInnerHTML={{ __html: item.product.description }}></ul>
-        <Rating name="size-large" defaultValue={item.product.rating} precision={0.5} size="large" />
-        <div className='rating-total'>({item.product.ratings_total} reviews)</div>
-      </div>
-      <Space wrap>
+        <div className="price">${item.offers.primary.price}</div>
+        <Space wrap id="detail-btn">
         <Button type="primary" onClick={() => handleAddToOrder(item.product.item_id)}>Add to cart</Button>
         <Button type="primary" onClick={goBackHandle}>go back</Button>
       </Space>
+      </div>
+      <span>
+      <Rating name="size-large" defaultValue={item.product.rating} precision={0.5} size="large" readOnly/>
+      <div className='rating-total'>({item.product.ratings_total} reviews)</div>
+      </span>
+
     </div>
   )
 }
