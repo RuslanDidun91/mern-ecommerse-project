@@ -43,7 +43,7 @@ export default function CartPage({ cart, handleChangeQty, setCart }) {
         {cart.lineItems.length ?
           <>
             <div className="total">
-              <div className='cart-total-items'>You have <strong>{cart.orderQty}</strong> items</div>
+              <div className='cart-total-items'>You have <strong>{cart.orderQty}</strong> {cart.orderQty > 1 ? 'items' : 'item'}</div>
               <span className='price'>${cart.orderTotal.toFixed(2)}</span>
 
               <Button
