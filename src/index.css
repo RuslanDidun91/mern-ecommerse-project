@@ -10,6 +10,11 @@
   --text-dark: #615954;
 }
 
+html, body {
+  overscroll-behavior: auto;
+  /* overscroll-behavior: none; */
+}
+
 
 body{
   margin: 0;

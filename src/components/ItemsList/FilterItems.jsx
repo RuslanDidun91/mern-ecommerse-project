@@ -12,6 +12,8 @@ export default function FilterItems({ data, setData }) {
     setFilter(e.target.value);
   };
 
+
+  
   useEffect(() => {
     const sorted = [...data].sort((a, b) => {
       if (filter === 'lowPrice') {
@@ -45,3 +47,5 @@ export default function FilterItems({ data, setData }) {
     </FormControl>
   );
 }
+
+

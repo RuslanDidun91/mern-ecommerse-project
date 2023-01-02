@@ -63,7 +63,7 @@ to find any items that you need!
 - [x] Consumed 3rd party api, retrieved and displayed data in components.
 - [x] Implemented user's cart, ability to add iteems, badges, item details.
 - [x] Connected Material_UI, Ant design libraries, added css styles, spinner.
-- [ ] Make app more user frienndly. Add feedbacks, reviews section, Stripe.
+- [ ] Make app more user friendly. Add feedbacks, reviews section, Stripe.
 - [ ] implement "Add item to my favourite" and "My account" functionality. 
 - [ ] Implement @media queries for mobile devices and other screens.
 

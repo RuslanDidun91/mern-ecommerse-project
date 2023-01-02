@@ -27,6 +27,7 @@ export default function App() {
       setCart(cart);
     }
     getCart();
+    console.log(cart)
   }, []);
 
 
