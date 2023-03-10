@@ -27,14 +27,12 @@ export default function App() {
       setCart(cart);
     }
     getCart();
-    console.log(cart)
   }, []);
 
 
   const handleAddToOrder = async (item_id) => {
     const updatedCart = await ordersAPI.addItemToCart(item_id);
     setCart(updatedCart);
-    console.log(updatedCart);
   }
 
   return (

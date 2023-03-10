@@ -19,7 +19,6 @@ export default function SearchBar({ setData }) {
     }
     setData(searchResult.search_results);
     setIsLoading(false);
-    console.log(searchResult.search_results);
   }
 
   const handleSubmit = (event) => {
